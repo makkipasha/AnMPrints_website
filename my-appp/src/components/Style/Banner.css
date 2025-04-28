@@ -1,0 +1,50 @@
+.banner-section {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 80vh; /* Full height of the viewport */
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: start;
+    justify-content: center;
+  }
+  
+  h1 {
+    font-family: Roboto;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 48px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+  }
+  
+  p {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 28px;
+    letter-spacing: 0px;
+    color: #E5E7EB;
+  }
+  
+  .btn {
+    background-color: #BE6E02;
+    color: #FFFFFF;
+  }
+  
+  @media (max-width: 768px) {
+    .banner-section {
+      height: 60vh; /* Adjust for smaller screens */
+    }
+  
+    h1 {
+      font-size: 36px; /* Adjust font size for smaller screens */
+    }
+  
+    .btn {
+      padding: 15px 30px;
+      font-size: 18px;
+    }
+  }
+  

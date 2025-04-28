@@ -1,0 +1,12 @@
+li{
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0px;
+    color: #6B7280;
+}
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  

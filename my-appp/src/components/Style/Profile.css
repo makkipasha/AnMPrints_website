@@ -1,0 +1,78 @@
+.profile-card-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+  }
+  
+  .profile-card-custom {
+    color: white;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 350px;
+    position: relative;
+  }
+  
+  .edit-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .profile-pic {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  .profile-card-custom h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+  
+  .dob {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 20px;
+  }
+  
+  .profile-details {
+    text-align: left;
+    margin-top: 10px;
+  }
+  
+  .profile-details p {
+    font-size: 14px;
+    margin: 6px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .sub-info {
+    color: #cce6ff;
+    margin-left: 20px;
+  }
+  
+  .logout-btn {
+    margin-top: 25px;
+    padding: 10px 25px;
+    background-color: #0c88dd;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .logout-btn:hover {
+    background-color: #0b75c1;
+  }
+  

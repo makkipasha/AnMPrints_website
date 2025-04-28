@@ -1,0 +1,37 @@
+.drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100vh;
+    background-color: #BE6E02 !important; /* force apply bg */
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+    color: white;
+  }
+  
+  .drawer.open {
+    transform: translateX(0);
+  }
+  
+  .close-btn {
+    background: transparent;
+    border: none;
+    color: white !important;
+    font-size: 24px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1001; /* Ensures it's above the Profile content */
+  }
+  
+
+  .css-y7ab46-MuiPaper-root-MuiDrawer-paper {
+    background-color: #000000 !important; /* force apply bg */
+  }
+  

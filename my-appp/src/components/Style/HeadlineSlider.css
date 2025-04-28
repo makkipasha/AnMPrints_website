@@ -1,0 +1,46 @@
+.headline-bar {
+    width: 100%;
+    background: #fff8e1;
+    border-bottom: 1px solid #ffd54f;
+    overflow: hidden;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #d84315;
+  }
+  
+  .headline-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .headline-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: scroll-left 150s linear infinite;
+  }
+  .headline-track:hover {
+    animation-play-state: paused; /* Pauses the animation on hover */
+  }
+  
+  
+  .headline-text {
+    display: inline-block;
+    padding: 0 2rem;
+    color: #d84315;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
