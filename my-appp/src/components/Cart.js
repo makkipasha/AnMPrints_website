@@ -21,7 +21,7 @@ const Cart = () => {
   const fetchCart = async () => {
     const token = localStorage.getItem("jwtToken");
     try {
-      const response = await axios.get("http://localhost:5005/api/cartdata", {
+      const response = await axios.get(process.env.REACT_APP_API_BASE_URL + "/cartdata", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -73,7 +73,7 @@ const Cart = () => {
           image: item.image,
         };
   
-        await axios.post("http://localhost:5005/api/add", payload, {
+        await axios.post(process.env.REACT_APP_API_BASE_URL + "/add", payload, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -95,7 +95,7 @@ const Cart = () => {
 
   const fetchCoupons = async () => {
     try {
-      const response = await axios.get("http://localhost:5005/api/coupons");
+      const response = await axios.get(process.env.REACT_APP_API_BASE_URL + "/coupons");
       setCoupons(response.data);
     } catch (error) {
       console.error("Error fetching coupons:", error);
@@ -224,7 +224,7 @@ const Cart = () => {
     console.log("Proceeding to Checkout with data:", finalCheckoutPayload);
   
     // Example to show where you'd proceed to checkout:
-    // axios.post("http://localhost:5005/api/checkout", finalCheckoutPayload)
+    // axios.post(process.env.REACT_APP_API_BASE_URL + "/checkout", finalCheckoutPayload)
     //   .then(response => { /* handle success */ })
     //   .catch(error => { console.error("Checkout error:", error); });
   

@@ -135,7 +135,7 @@ const AllUsers = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch("http://localhost:5005/api/users"); // Adjust API URL as needed
+        const response = await fetch(process.env.REACT_APP_API_BASE_URL + "/users"); // Adjust API URL as needed
         console.log("Response:", response);
         
         if (!response.ok) {

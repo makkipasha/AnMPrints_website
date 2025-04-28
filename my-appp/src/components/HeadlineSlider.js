@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import "./Style/HeadlineSlider.css";
 
+const API_BASE = `${process.env.REACT_APP_API_BASE_URL}/headlines`;
+
 const HeadlineSlider = () => {
   const [headlines, setHeadlines] = useState([]);
 
   useEffect(() => {
     const fetchHeadlines = async () => {
       try {
-        const res = await axios.get('http://localhost:5005/api/headlines');
+        const res = await axios.get(API_BASE);
         const visible = res.data.filter(h => h.status === 1);
 
         // Duplicate the full array enough times

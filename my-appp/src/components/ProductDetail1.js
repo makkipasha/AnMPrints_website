@@ -29,7 +29,7 @@ const ProductDetail1 = () => {
     if (!token) return;
   
     try {
-      const response = await axios.get("http://localhost:5005/api/reviews", {
+      const response = await axios.get(process.env.REACT_APP_API_BASE_URL + "/reviews", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -133,7 +133,7 @@ const ProductDetail1 = () => {
   
     // If token is present, proceed with server request
     try {
-      const response = await fetch("http://localhost:5005/api/add", {
+      const response = await fetch(process.env.REACT_APP_API_BASE_URL + "/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -186,7 +186,7 @@ const ProductDetail1 = () => {
       console.log("Sending review data:", reviewData);
   
       const response = await axios.post(
-        "http://localhost:5005/api/reviews",
+        process.env.REACT_APP_API_BASE_URL + "/reviews",
         reviewData,
         {
           headers: {

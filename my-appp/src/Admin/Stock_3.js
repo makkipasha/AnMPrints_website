@@ -19,7 +19,7 @@ const Stock_3 = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get("http://localhost:5005/api/categories");
+        const response = await axios.get(process.env.REACT_APP_API_BASE_URL + "/categories");
         setCategories(response.data.categories);
       } catch (error) {
         console.error("Error fetching categories:", error);
@@ -106,7 +106,7 @@ const Stock_3 = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5005/api/merchandise", // Corrected API endpoint
+        process.env.REACT_APP_API_BASE_URL + "/merchandise", // Corrected API endpoint
         formDataToSend,
         {
           headers: { "Content-Type": "multipart/form-data" },

@@ -27,7 +27,7 @@ const AddBlog = () => {
   }, []);
 
   const fetchBlogs = () => {
-    fetch("http://localhost:5005/api/blogs")
+    fetch(process.env.REACT_APP_API_BASE_URL + "/blogs")
       .then((res) => res.json())
       .then((data) => setBlogs(data))
       .catch((err) => {
@@ -45,7 +45,7 @@ const AddBlog = () => {
   
     const url = editingBlog
       ? `http://localhost:5005/api/blogs/${editingBlog.id}`
-      : "http://localhost:5005/api/blogs";
+      : process.env.REACT_APP_API_BASE_URL + "/blogs";
     const method = editingBlog ? "PUT" : "POST";
   
     fetch(url, {

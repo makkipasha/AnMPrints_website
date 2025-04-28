@@ -20,7 +20,7 @@ const Category1 = () => {
     if (!token) return;
   
     try {
-      const response = await axios.get("http://localhost:5005/api/reviews", {
+      const response = await axios.get(process.env.REACT_APP_API_BASE_URL + "/reviews", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -45,7 +45,7 @@ const Category1 = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5005/api/accessories/category/2");
+        const response = await axios.get(process.env.REACT_APP_API_BASE_URL + "/accessories/category/2");
         setProducts(response.data);
         setLoading(false);
       } catch (error) {
@@ -77,7 +77,7 @@ const Category1 = () => {
       console.log("Sending review data:", reviewData);
   
       const response = await axios.post(
-        "http://localhost:5005/api/reviews",
+        process.env.REACT_APP_API_BASE_URL + "/reviews",
         reviewData,
         {
           headers: {

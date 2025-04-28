@@ -11,7 +11,7 @@ const HeroSection = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:5005/api/banner")
+    fetch(process.env.REACT_APP_API_BASE_URL + "/banner")
       .then((response) => response.json())
       .then((data) => {
         if (data.image && data.title) {

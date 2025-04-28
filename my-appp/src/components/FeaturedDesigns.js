@@ -13,8 +13,8 @@ const FeaturedDesigns = () => {
       try {
         // Dono category ke products fetch karo
         const [response4, response5] = await Promise.all([
-          axios.get("http://localhost:5005/api/product/category/4"),
-          axios.get("http://localhost:5005/api/product/category/5")
+          axios.get(process.env.REACT_APP_API_BASE_URL + "/product/category/4"),
+          axios.get(process.env.REACT_APP_API_BASE_URL + "/product/category/5")
         ]);
 
         // Dono category ke products ko combine karo

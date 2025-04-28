@@ -21,7 +21,7 @@ const Banner = () => {
     formData.append("image", image);
   
     try {
-      const res = await axios.post("http://localhost:5005/api/banner", formData, {
+      const res = await axios.post(process.env.REACT_APP_API_BASE_URL + "/banner", formData, {
         headers: {
           "Content-Type": "multipart/form-data"
         }

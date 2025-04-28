@@ -20,7 +20,7 @@ const Category5 = () => {
     if (!token) return;
   
     try {
-      const response = await axios.get("http://localhost:5005/api/reviews", {
+      const response = await axios.get(process.env.REACT_APP_API_BASE_URL + "/reviews", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -42,7 +42,7 @@ const Category5 = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:5005/api/product/category/5");
+        const response = await axios.get(process.env.REACT_APP_API_BASE_URL + "/product/category/5");
 
         // Ensure you access the products key in the response
         const data = response.data.products.map((item) => ({
@@ -84,7 +84,7 @@ const Category5 = () => {
       console.log("Sending review data:", reviewData);
   
       const response = await axios.post(
-        "http://localhost:5005/api/reviews",
+        process.env.REACT_APP_API_BASE_URL + "/reviews",
         reviewData,
         {
           headers: {

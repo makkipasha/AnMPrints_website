@@ -17,7 +17,7 @@ const ShowAccessories = () => {
     quantity: "",
   });
 
-  const apiUrl = "http://localhost:5005/api/accessories-customize";
+  const apiUrl = process.env.REACT_APP_API_BASE_URL + "/accessories-customize";
   const imagePath = "http://localhost:5005/uploads/";
 
   useEffect(() => {

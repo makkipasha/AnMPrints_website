@@ -26,7 +26,7 @@ const AddBlog = () => {
     formData.append("title", title);
     formData.append("description", description);
   
-    fetch("http://localhost:5005/api/blogs", {
+    fetch(process.env.REACT_APP_API_BASE_URL + "/blogs", {
       method: "POST",
       body: formData,
     })

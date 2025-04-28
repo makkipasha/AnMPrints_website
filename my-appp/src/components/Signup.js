@@ -23,7 +23,7 @@ const Signup = () => {
         }
 
         try {
-            const res = await axios.post("http://localhost:5005/api/auth/signup", formData);
+            const res = await axios.post(process.env.REACT_APP_API_BASE_URL + "/auth/signup", formData);
             setMessage(res.data.message);
             setMessageType("success");
             setTimeout(() => navigate("/login"), 1500); // redirect after a short delay
@@ -35,7 +35,7 @@ const Signup = () => {
 
     const handleGoogleSignup = async (credentialResponse) => {
         try {
-            const response = await axios.post("http://localhost:5005/api/auth/auth/google-signup", {
+            const response = await axios.post(process.env.REACT_APP_API_BASE_URL + "/auth/auth/google-signup", {
                 token: credentialResponse.credential,
             });
     

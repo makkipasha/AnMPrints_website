@@ -25,7 +25,7 @@ const Login = () => {
         }
 
         try {
-            const res = await axios.post("http://localhost:5005/api/auth/login", formData);
+            const res = await axios.post(process.env.REACT_APP_API_BASE_URL + "/auth/login", formData);
             localStorage.setItem("jwtToken", res.data.token);
             setMessage({ type: "success", text: res.data.message });
             setTimeout(() => navigate("/"), 1500);
@@ -74,7 +74,7 @@ const Login = () => {
     const token = credentialResponse.credential;
 
     try {
-      const res = await axios.post("http://localhost:5005/api/auth/google-auth", { token });
+      const res = await axios.post(process.env.REACT_APP_API_BASE_URL + "/auth/google-auth", { token });
 
       // Store JWT token
       localStorage.setItem("jwtToken", res.data.token); // <-- add this line

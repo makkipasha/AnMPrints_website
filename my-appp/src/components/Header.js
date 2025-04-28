@@ -21,7 +21,7 @@ const [showDropdown, setShowDropdown] = useState(false);
 
 useEffect(() => {
   axios
-    .get("http://localhost:5005/api/categories")
+    .get(process.env.REACT_APP_API_BASE_URL + "/categories")
     .then((response) => {
       setCategories(response.data.categories);
     })
@@ -30,7 +30,7 @@ useEffect(() => {
     });
 
   axios
-    .get("http://localhost:5005/api/product")
+    .get(process.env.REACT_APP_API_BASE_URL + "/product")
     .then((res) => {
       setProducts(res.data.products);
       setFilteredProducts(res.data.products);
@@ -43,7 +43,7 @@ useEffect(() => {
   if (token) {
     // Logged-in user
     axios
-      .get("http://localhost:5005/api/cart-summary", {
+      .get(process.env.REACT_APP_API_BASE_URL + "/cart-summary", {
         headers: { Authorization: token },
       })
       .then((response) => {

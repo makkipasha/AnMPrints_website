@@ -36,10 +36,10 @@ const Process = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const merchandiseResponse = await fetch("http://localhost:5005/api/merchandise");
+        const merchandiseResponse = await fetch(process.env.REACT_APP_API_BASE_URL + "/merchandise");
         const merchandiseData = await merchandiseResponse.json();
 
-        const accessoriesResponse = await fetch("http://localhost:5005/api/accessories-customize");
+        const accessoriesResponse = await fetch(process.env.REACT_APP_API_BASE_URL + "/accessories-customize");
         const accessoriesData = await accessoriesResponse.json();
 
         const combinedProducts = [...merchandiseData, ...accessoriesData].map((product) => ({
@@ -112,7 +112,7 @@ const Process = () => {
   
       const token = localStorage.getItem("jwtToken");
   
-      const response = await fetch("http://localhost:5005/api/upload-merged-image", {
+      const response = await fetch(process.env.REACT_APP_API_BASE_URL + "/upload-merged-image", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -202,7 +202,7 @@ const Process = () => {
         user_id,
       };
   
-      const response = await fetch("http://localhost:5005/api/add", {
+      const response = await fetch(process.env.REACT_APP_API_BASE_URL + "/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

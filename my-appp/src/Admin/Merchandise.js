@@ -18,7 +18,7 @@ const Merchandise = () => {
     variants: [],
   });
 
-  const apiUrl = "http://localhost:5005/api/merchandise";
+  const apiUrl = process.env.REACT_APP_API_BASE_URL + "/merchandise";
   const imagePath = "http://localhost:5005/uploads/";
 
   // Fetch data from API

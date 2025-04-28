@@ -10,7 +10,7 @@ const ShowReview = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5005/api/review/all")
+      .get(process.env.REACT_APP_API_BASE_URL + "/review/all")
       .then((response) => {
         if (response.data && response.data.reviews) {
           setReviews(response.data.reviews);

@@ -19,7 +19,7 @@ const Stock_2 = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get("http://localhost:5005/api/categories");
+        const response = await axios.get(process.env.REACT_APP_API_BASE_URL + "/categories");
         if (Array.isArray(response.data.categories)) {
           setCategories(response.data.categories);
         } else {
@@ -81,7 +81,7 @@ const Stock_2 = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5005/api/accessories",
+        process.env.REACT_APP_API_BASE_URL + "/accessories",
         data,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

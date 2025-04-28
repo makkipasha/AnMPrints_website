@@ -8,12 +8,12 @@ const Dashboard = () => {
 
   useEffect(() => {
     // Fetch total users count
-    axios.get("http://localhost:5005/api/total-users")
+    axios.get(process.env.REACT_APP_API_BASE_URL + "/total-users")
       .then(response => setTotalUsers(response.data.totalUsers))
       .catch(error => console.error("Error fetching total users:", error));
 
     // Fetch recent users
-    axios.get("http://localhost:5005/api/recent-users")
+    axios.get(process.env.REACT_APP_API_BASE_URL + "/recent-users")
       .then(response => {
         if (typeof response.data.users === "string") {
           setRecentUsers([]);

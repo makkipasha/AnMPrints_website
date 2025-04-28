@@ -10,7 +10,7 @@ const FeaturedThemes = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch("http://localhost:5005/api/categories");
+        const response = await fetch(process.env.REACT_APP_API_BASE_URL + "/categories");
         const data = await response.json();
         if (data && data.categories) {
           setCategories(data.categories);
