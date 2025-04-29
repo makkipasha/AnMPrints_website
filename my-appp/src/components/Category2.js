@@ -110,7 +110,7 @@ const Category2 = () => {
         {currentProducts.map((product) => {
           // ✅ Show only the first image if there are multiple images
           const imagePath = product.images
-            ? `http://localhost:5005/uploads/${product.images.split(",")[0].trim()}`
+            ? `/uploads/${product.images.split(",")[0].trim()}`
             : "https://via.placeholder.com/220";
 
           return (

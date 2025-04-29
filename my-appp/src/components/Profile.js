@@ -23,7 +23,7 @@ const Profile = () => {
       const decoded = jwtDecode(token);
       const userId = decoded.id;
 
-      fetch(`http://localhost:5005/api/auth/profile/${userId}`, {
+      fetch(`${process.env.REACT_APP_API_BASE_URL}/auth/profile/${userId}`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,

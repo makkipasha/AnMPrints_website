@@ -97,9 +97,9 @@ useEffect(() => {
     let apiUrl = "";
 
     if ([4, 5].includes(categoryId)) {
-      apiUrl = `http://localhost:5005/api/products/category/${categoryId}`;
+      apiUrl = `${process.env.REACT_APP_API_BASE_URL}/products/category/${categoryId}`;
     } else if ([2, 6, 8].includes(categoryId)) {
-      apiUrl = `http://localhost:5005/api/accessories/cat/${categoryId}`;
+      apiUrl = `${process.env.REACT_APP_API_BASE_URL}/accessories/cat/${categoryId}`;
     }
 
     if (apiUrl) {

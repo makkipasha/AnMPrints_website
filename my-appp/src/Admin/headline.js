@@ -7,7 +7,7 @@ const Headline = () => {
   const [editId, setEditId] = useState(null);
   const [showHeadlines, setShowHeadlines] = useState(true);
 
-  // const API_BASE = 'http://localhost:5005/api/headlines';
+  // const API_BASE = process.env.REACT_APP_API_BASE_URL + '/headlines';
   const API_BASE = `${process.env.REACT_APP_API_BASE_URL}/headlines`;
 
   useEffect(() => {

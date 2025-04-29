@@ -47,7 +47,7 @@ const FeaturedDesigns = () => {
             <Card className="border-0 shadow-sm h-100">
               <Card.Img
                 variant="top"
-                src={`http://localhost:5005/uploads/${product.images[0]}`}
+                src={`/uploads/${product.images[0]}`}
                 alt={product.description}
                 style={{ height: "400px"}} 
               />

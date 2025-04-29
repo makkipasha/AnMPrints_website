@@ -31,14 +31,26 @@ const searchRoute = require('./routes/search');
 dotenv.config();
 const app = express();
 app.use(express.json());
-app.use('/uploads', express.static('uploads', {
-    setHeaders: (res, path, stat) => {
-      res.set('Access-Control-Allow-Origin', '*');
-    }
-  }));
+// app.use('/uploads', express.static('uploads', {
+//     setHeaders: (res, path, stat) => {
+//       res.set('Access-Control-Allow-Origin', '*');
+//     }
+//   }));
   
-app.use(express.static("uploads")); // Serve uploaded images
+// app.use(express.static("uploads")); // Serve uploaded images
 
+app.use(
+  "/uploads",
+  express.static(
+    path.join(__dirname, "uploads"),
+    {
+      setHeaders: (res, path, stat) => {
+        res.set("Access-Control-Allow-Origin","*");
+      },
+      // fallthrough: true by default, so missing‐file → next()
+    }
+  )
+);
 
 
 
@@ -157,7 +169,7 @@ app.use('/api', searchRoute);
 
 
 // ✅ Start the server
-const PORT = process.env.PORT || 5006;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });

@@ -52,7 +52,7 @@ const ProductDetail1 = () => {
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:5005/api/accessories/${id}`);
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/accessories/${id}`);
         if (!response.ok) throw new Error(`Failed to fetch: ${response.status}`);
         const text = await response.text();
         const data = JSON.parse(text);
@@ -77,7 +77,7 @@ const ProductDetail1 = () => {
   
     const fetchSimilarProducts = async (category) => {
       try {
-        const response = await fetch(`http://localhost:5005/api/accessories/category/${category}`);
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/accessories/category/${category}`);
         if (!response.ok) throw new Error(`Failed to fetch similar products: ${response.status}`);
         const data = await response.json();
         const filteredProducts = data.filter(item => item.id !== parseInt(id))
@@ -217,7 +217,7 @@ const ProductDetail1 = () => {
             {sliderImages.map((img, index) => (
               <div key={index} style={{ height: '600px', overflow: 'hidden' }}>
               <img
-                src={`http://localhost:5005/uploads/${img}`}
+                src={`/uploads/${img}`}
                 alt={product.description}
                 style={{
                   width: '100%',
@@ -322,7 +322,7 @@ const ProductDetail1 = () => {
           <div className="card">
             <Link to={`/products/detail/${item.id}`}>
               <img 
-                src={`http://localhost:5005/uploads/${item.images.split(",")[0]}`} 
+                src={`/uploads/${item.images.split(",")[0]}`} 
                 className="card-img-top img-fluid w-100" 
                 alt={item.name} 
                 style={{ height: "300px", cursor: "pointer" }} 

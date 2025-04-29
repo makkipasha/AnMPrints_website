@@ -3,7 +3,7 @@ import axios from "axios";
 import { FaPlus } from "react-icons/fa";
 import { Modal } from "bootstrap";
 
-const API_URL = "http://localhost:5005"; // Replace with your actual API URL
+const API_URL = `${process.env.REACT_APP_API_BASE_URL}`; // Replace with your actual API URL
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);

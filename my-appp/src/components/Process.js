@@ -75,7 +75,7 @@ const Process = () => {
   
     setIsUploading(true);
     const selectedVariant = selectedProduct.variants.find((v) => v.color === selectedColor);
-    const baseImageUrl = `http://localhost:5005/uploads/${selectedVariant?.image}`;
+    const baseImageUrl = `/uploads/${selectedVariant?.image}`;
   
     const canvas = document.getElementById("mergeCanvas");
     const ctx = canvas.getContext("2d");
@@ -274,7 +274,7 @@ const Process = () => {
       <div key={product.id} className="card mb-3 product-card" onClick={() => handleProductSelect(product)}>
         <div className="card-body text-center">
           <img
-            src={`http://localhost:5005/uploads/${product.variants?.[0]?.image || "default.jpg"}`}
+            src={`/uploads/${product.variants?.[0]?.image || "default.jpg"}`}
             alt={product.name}
             className="img-fluid"
             style={{ maxHeight: "150px" }}
@@ -316,7 +316,7 @@ const Process = () => {
             >
              <img
   ref={productImgRef}
-  src={`http://localhost:5005/uploads/${selectedProduct?.variants?.find(variant => variant.color === selectedColor)?.image || "default.jpg"}`}
+  src={`/uploads/${selectedProduct?.variants?.find(variant => variant.color === selectedColor)?.image || "default.jpg"}`}
   alt={selectedProduct?.name}
   style={{
     height: "auto",

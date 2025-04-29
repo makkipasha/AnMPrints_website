@@ -44,7 +44,7 @@ const AddBlog = () => {
     };
   
     const url = editingBlog
-      ? `http://localhost:5005/api/blogs/${editingBlog.id}`
+      ? `${process.env.REACT_APP_API_BASE_URL}/blogs/${editingBlog.id}`
       : process.env.REACT_APP_API_BASE_URL + "/blogs";
     const method = editingBlog ? "PUT" : "POST";
   
@@ -84,7 +84,7 @@ const AddBlog = () => {
   };
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5005/api/blogs/${id}`, {
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/blogs/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

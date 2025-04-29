@@ -10,7 +10,7 @@ const Blog = () => {
 
   const fetchBlogs = async () => {
     try {
-      const res = await fetch('http://localhost:5005/api/blogs');
+      const res = await fetch(process.env.REACT_APP_API_BASE_URL + '/blogs');
       const data = await res.json();
 
       // Enhance blog content with embedded YouTube links

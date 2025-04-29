@@ -172,7 +172,7 @@ const Accessories = () => {
                           ? item.images.map((img, idx) => (
                               <img
                                 key={idx}
-                                src={`http://localhost:5005/uploads/${img}`}
+                                src={`/uploads/${img}`}
                                 alt="accessory"
                                 style={{ width: "70px", height: "70px" }}
                                 className="rounded me-1"
@@ -182,7 +182,7 @@ const Accessories = () => {
                           ? item.images.split(",").map((img, idx) => (
                               <img
                                 key={idx}
-                                src={`http://localhost:5005/uploads/${img}`}
+                                src={`/uploads/${img}`}
                                 alt="accessory"
                                 style={{ width: "70px", height: "70px" }}
                                 className="rounded me-1"

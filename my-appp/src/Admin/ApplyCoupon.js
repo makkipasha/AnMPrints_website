@@ -22,10 +22,10 @@ const CouponForm = () => {
     e.preventDefault();
     try {
       if (editId) {
-        await axios.put(`http://localhost:5005/api/coupons/${editId}`, form);
+        await axios.put(`${process.env.REACT_APP_API_BASE_URL}/coupons/${editId}`, form);
         setSuccess('Coupon updated successfully!');
       } else {
-        await axios.post('http://localhost:5005/api/coupons', form);
+        await axios.post(process.env.REACT_APP_API_BASE_URL + '/coupons', form);
         setSuccess('Coupon created successfully!');
       }
       setForm({
@@ -45,7 +45,7 @@ const CouponForm = () => {
 
   const fetchCoupons = async () => {
     try {
-      const res = await axios.get('http://localhost:5005/api/coupons');
+      const res = await axios.get(process.env.REACT_APP_API_BASE_URL + '/coupons');
       setCoupons(res.data);
     } catch (err) {
       console.error('Error fetching coupons:', err);
@@ -65,7 +65,7 @@ const CouponForm = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5005/api/coupons/${id}`);
+      await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/coupons/${id}`);
       fetchCoupons();
       setSuccess('Coupon deleted!');
       setTimeout(() => setSuccess(''), 3000);

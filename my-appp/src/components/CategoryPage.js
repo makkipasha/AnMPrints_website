@@ -15,7 +15,7 @@ const CategoryPage = () => {
   useEffect(() => {
     const fetchAccessories = async () => {
       try {
-        const response = await fetch(`http://localhost:5005/api/accessories/cat/6`);
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/accessories/cat/6`);
         const data = await response.json();
 
         if (data && data.accessories) {
@@ -76,7 +76,7 @@ const CategoryPage = () => {
                   </span>
                 )}
                 <img
-                  src={`http://localhost:5005/uploads/${item.images}`}
+                  src={`/uploads/${item.images}`}
                   className="card-img-top"
                   alt={item.name}
                   style={{ height: "220px", objectFit: "cover" }}

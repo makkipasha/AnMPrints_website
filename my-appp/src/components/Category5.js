@@ -49,7 +49,7 @@ const Category5 = () => {
           id: item.id,
           product_code: item.product_code, // ✅ Add this line
           name: item.description,
-          image: `http://localhost:5005/uploads/${item.images[0]}`,
+          image: `/uploads/${item.images[0]}`,
           price: parseFloat(item.price),
           original_price: parseFloat(item.price) * 1.2,
           rating: 4.5,

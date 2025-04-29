@@ -160,7 +160,7 @@ const Products = () => {
     product.images.map((img, index) => (
       <img
         key={index}
-        src={`http://localhost:5005/uploads/${img}`}
+        src={`/uploads/${img}`}
         alt="product"
         style={{ width: "70px", height: "70px", marginRight: "5px" }}
         className="rounded"

@@ -27,9 +27,9 @@ const FeaturedThemes = () => {
     let apiUrl = "";
 
     if ([4, 5].includes(categoryId)) {
-      apiUrl = `http://localhost:5005/api/products/category/${categoryId}`;
+      apiUrl = `${process.env.REACT_APP_API_BASE_URL}/products/category/${categoryId}`;
     } else if ([2, 6, 8].includes(categoryId)) {
-      apiUrl = `http://localhost:5005/api/accessories/cat/${categoryId}`;
+      apiUrl = `${process.env.REACT_APP_API_BASE_URL}/accessories/cat/${categoryId}`;
     }
 
     if (apiUrl) {
@@ -59,7 +59,7 @@ const FeaturedThemes = () => {
             >
               <div className="theme-circle border-gradient-blue">
                 <img
-                  src={`http://localhost:5005/uploads/${category.image}`}
+                  src={`/uploads/${category.image}`}
                   alt={category.name}
                   className="img-fluid"
                   style={{ width: "150px", height: "150px", objectFit: "cover" }}

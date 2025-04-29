@@ -26,7 +26,7 @@ const ProductDetail2 = () => {
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:5005/api/product/${id}`)
+      axios.get(`${process.env.REACT_APP_API_BASE_URL}/product/${id}`)
         .then(response => {
           setProduct(response.data);
           setSelectedColor(response.data.variants[0]?.color || "");
@@ -44,7 +44,7 @@ const ProductDetail2 = () => {
   }, [product]);
 
   const fetchSimilarProducts = (category, productId) => {
-    axios.get(`http://localhost:5005/api/product/category/${category}`)
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}/product/category/${category}`)
       .then(response => {
         const filteredProducts = response.data.products
           .filter(p => p.id !== productId)
@@ -205,7 +205,7 @@ const ProductDetail2 = () => {
             {displayImages.map((img, index) => (
              <div key={index} style={{ height: '600px', overflow: 'hidden' }}>
              <img
-               src={`http://localhost:5005/uploads/${img}`}
+               src={`/uploads/${img}`}
                alt={product.description}
                style={{
                  width: '100%',
@@ -322,7 +322,7 @@ const ProductDetail2 = () => {
           <div key={item.id} className="col-md-3 mb-4">
             <div className="card">
               <Link to={`/products/detail1/${item.id}`}>
-                <img src={`http://localhost:5005/uploads/${item.images[0]}`} alt={item.description}className="card-img-top img-fluid w-100" 
+                <img src={`/uploads/${item.images[0]}`} alt={item.description}className="card-img-top img-fluid w-100" 
                 style={{ height: "300px", cursor: "pointer" }}  />
               </Link>
               <div className="card-body">

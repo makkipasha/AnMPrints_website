@@ -17,7 +17,7 @@ const upload = multer({ storage: storage });
 
 const storeBanner = (req, res) => {
     const { title, description } = req.body;
-    const image = req.file ? `http://localhost:5005/uploads/${req.file.filename}` : ""; // Full URL
+    const image = req.file ? `${process.env.REACT_APP_IMAGE_URL}/uploads/${req.file.filename}` : ""; // Full URL
   
     if (!title || !image) {
       return res.status(400).json({ message: "Title and image are required." });
@@ -92,7 +92,7 @@ const updateBanner = (req, res) => {
   if (!title) {
     return res.status(400).json({ message: "Title is required." });
   }
-  const image = req.file ? `http://localhost:5005/uploads/${req.file.filename}` : null; // If no new image, keep the existing one
+  const image = req.file ? `${process.env.REACT_APP_IMAGE_URL}/uploads/${req.file.filename}` : null; // If no new image, keep the existing one
 
   if (!title || !description) {
     return res.status(400).json({ message: "Title and description are required." });

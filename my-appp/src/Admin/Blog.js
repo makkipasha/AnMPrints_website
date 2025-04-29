@@ -10,7 +10,7 @@ const Blog = () => {
 
   const fetchBlogs = async () => {
     try {
-      const res = await fetch('http://localhost:5005/api/blog');
+      const res = await fetch(process.env.REACT_APP_API_BASE_URL + '/blog');
       const data = await res.json();
 
       const enhancedData = data.map(blog => ({

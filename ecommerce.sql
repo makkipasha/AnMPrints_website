@@ -167,7 +167,7 @@ CREATE TABLE `banners` (
 --
 
 INSERT INTO `banners` (`id`, `image`, `title`, `description`) VALUES
-(2, 'http://localhost:5005/uploads/1745586504310.jpg', 'Hello', '');
+(2, process.env.REACT_APP_IMAGE_URL + '/uploads/1745586504310.jpg', 'Hello', '');
 
 -- --------------------------------------------------------
 

@@ -129,7 +129,7 @@ const Cart = () => {
     if (isLoggedIn) {
       const token = localStorage.getItem("jwtToken");
       try {
-        await axios.delete(`http://localhost:5005/api/remove/${id}`, {
+        await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/remove/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -254,7 +254,7 @@ const Cart = () => {
       const token = localStorage.getItem("jwtToken");
       try {
         await axios.put(
-          `http://localhost:5005/api/update-quantity/${id}`,
+          `${process.env.REACT_APP_API_BASE_URL}/update-quantity/${id}`,
           { quantity },
           {
             headers: {
@@ -323,7 +323,7 @@ const Cart = () => {
                 item.image
                   ? item.image.startsWith("http")
                     ? item.image
-                    : `http://localhost:5005/${item.image}`
+                    : `${process.env.REACT_APP_API_BASE_URL}/${item.image}`
                   : "https://via.placeholder.com/100"
               }
               alt={item.name}
